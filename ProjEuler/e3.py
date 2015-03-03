@@ -1,5 +1,10 @@
 import math
 
+# Returns if a given number is a prime
+# Uses all the previous primes to identify
+# is num is prime
+# principle : if a number is prime, it is
+#indivisble by all the previous primes
 def isPrime(num, known_primes):
 
     if len(known_primes) > 0:
@@ -19,6 +24,9 @@ def isPrime(num, known_primes):
      
     return True
 
+# Returns the largest prime factor of num
+# Principle: if x is a prime factor of num
+# the next largest primefactor can be found in num/x
 def LargestPrimeFactor(num):
     
     known_primes =[2L]
@@ -75,11 +83,13 @@ def LargestPrimeFactor(num):
     print prime_factors
     return largestPrimeFactor        
 
+# Finda primeIndex num of primes
+# starting from 2
 def findAllPrimes(primeIndex):
     known_primes = [2L]
     count = 0
     i = 3L
-    while count < 10001: 
+    while count < primeIndex: 
         if isPrime(i, known_primes) == True:
             known_primes.append(long(i))
             count += 1
