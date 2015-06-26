@@ -96,11 +96,28 @@ def findAllPrimes(primeIndex):
         i += 1    
 
     print known_primes[10000]
+    return known_primes
 
 
+def primeSum(maxPrime):
+    known_primes = [2L]
+    count = 0
+    i = 3L
+    s = 0
+    while  s < sumPrime: 
+        if isPrime(i, known_primes) == True:
+            known_primes.append(long(i))
+            s += i 
+        i += 1    
+    
+    print "Num terms = " + str(len(known_primes))
+
+    #print known_primes[10000]
+    
 if __name__ == "__main__":
     #print("20 is %s"%(str(isPrime(20,[1,2]))))
     #print("20 is %s"%(str(isPrime(17,[1,2]))))
     #print("21 is %s"%(str(LargestPrimeFactor(13195))))
-    print("Largest prime factor is : %s"%(str(LargestPrimeFactor(600851475143L))))
+    #print("Largest prime factor is : %s"%(str(LargestPrimeFactor(600851475143L))))
+    primeSum(1000000)
 
